@@ -6,7 +6,7 @@ import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Flex flexDirection="column" gap="120px">
+    <Flex flexDirection="column" gap="120px" padding="150px 20px">
       <Album />
       {/* <Audiobooks /> */}
       <Song />

@@ -9,11 +9,11 @@ export const Album = () => {
   const { albums = {} } = newReleases;
   const { items = [] } = albums;
   return (
-    <Flex flexDirection="column" flexWrap="wrap">
+    <Flex flexDirection="column" >
       <Text fontSize="20px" fontWeight="bold">
         New Releases
       </Text>
-      <Flex gap="12px">
+      <Flex gap="12px" flexWrap="wrap">
         {items.slice(0, 6).map((item) => {
           return (
             <SpotifyCard key={item.id} item={item} isLoading={isLoading} />

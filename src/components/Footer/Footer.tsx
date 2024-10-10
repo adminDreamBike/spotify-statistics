@@ -1,20 +1,22 @@
 import { useTrackStore } from "@/lib/stores/tracks";
 import { Flex } from "@chakra-ui/react";
-import ReactAudioPlayer from "react-audio-player";
 import { Player } from "../Player/Player";
 export const Footer = () => {
   const { track } = useTrackStore();
+  const { name, href, urlImage, artitst } = track;
   return (
     <Flex
-      background="red"
       position="fixed"
       bottom="0px"
       width="100%"
-      height="80px"
+      height="auto"
       zIndex="2"
+      background="black"
+      padding="20px"
     >
-      <h1>{track?.name}</h1>
-      <Player uri={track?.href} />
+      <Player
+        currentSong={{ title: name, src: href, url: urlImage, artist: artitst }}
+      />
     </Flex>
   );
 };

@@ -23,7 +23,7 @@ export const Song = () => {
       <Text fontSize="20px" fontWeight="bold">
         Recommended
       </Text>
-      <Flex gap="12px">
+      <Flex gap="12px" flexWrap="wrap">
         {getInfoFromTracks()
           ?.slice(0, 6)
           .map((item) => {

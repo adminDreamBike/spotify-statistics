@@ -1,4 +1,4 @@
-import { Albums, Item, Track } from "@/api/types";
+import { Item } from "@/api/types";
 import { useTrackStore } from "@/lib/stores/tracks";
 import {
   Card,
@@ -25,16 +25,15 @@ export const SpotifyCard = ({
   const { name: nameArtist } = artists[0] || {};
   const { setTrack } = useTrackStore();
   const handleClickPlay = () => {
-    const { id, name, href, urlImage, artist, uri } = item;
+    const { id, name, href, images, artists } = item;
     setTrack({
       id: id,
       name: name,
-      href: uri,
-      urlImage: urlImage,
-      artist: artist,
+      href: href,
+      urlImage: images[0].url,
+      artitst: artists[0].name,
     });
   };
-
   return (
     <Skeleton isLoaded={!isLoading}>
       <Card

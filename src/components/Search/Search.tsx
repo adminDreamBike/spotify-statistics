@@ -49,7 +49,7 @@ export const Search = () => {
             background="#1f1f1f"
             border="none"
             onFocusCapture={handleFocusInput}
-            onKeyDown={(event) => router.push(`/search?q=${event.key}`)}
+            onChange={(event) => router.push(`/search?q=${event.target.value}`)}
           />
           <InputRightElement>
             <Divider orientation="vertical" background="white" />

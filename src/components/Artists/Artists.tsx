@@ -3,6 +3,7 @@
 import { useArtists } from "@/lib/queries/artists";
 import { Flex, Text } from "@chakra-ui/react";
 import { SpotifyCard } from "../SpotifyCard/SpotifyCard";
+import { Item } from "@/api/types";
 
 export const Artistis = () => {
   const { artists = [], isError, isLoading } = useArtists();
@@ -13,7 +14,7 @@ export const Artistis = () => {
         Artists
       </Text>
       <Flex gap="12px">
-        {artists?.slice(0, 4).map((item) => {
+        {artists?.slice(0, 4).map((item: Item) => {
           return (
             <SpotifyCard key={item.id} item={item} isLoading={isLoading} />
           );
