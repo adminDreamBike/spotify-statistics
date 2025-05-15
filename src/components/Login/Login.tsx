@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 
 export const Login = () => {
   const router = useRouter();
-  const { login, isLoading, isError, error, refetch } = useLogin();
+  const { login, isError, error, refetch } = useLogin();
   const handleLogin = () => {
     refetch();
     localStorage.setItem("token", JSON.stringify(login?.access_token));

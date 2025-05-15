@@ -6,7 +6,7 @@ import { SpotifyCard } from "../SpotifyCard/SpotifyCard";
 import { Item } from "@/api/types";
 
 export const Artistis = () => {
-  const { artists = [], isError, isLoading } = useArtists();
+  const { artists = [], isLoading } = useArtists();
 
   return (
     <Flex flexDirection="column" flexWrap="wrap">

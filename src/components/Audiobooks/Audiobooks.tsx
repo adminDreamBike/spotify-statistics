@@ -5,7 +5,7 @@ import { SpotifyCard } from "../SpotifyCard/SpotifyCard";
 import { Flex, Text } from "@chakra-ui/react";
 
 export const Audiobooks = () => {
-  const { audiobooks = {}, isError, isLoading } = useAudiobooks();
+  const { audiobooks = {}, isLoading } = useAudiobooks();
   const { albums = {} } = audiobooks;
   const { items = [] } = albums;
   return (
