@@ -6,6 +6,7 @@ import { ChakraUIProvider } from "@/providers/ChakraUIProvider";
 import { fonts } from "./fonts";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
+import { Suspense } from "react";
 
 export default function RootLayout({
   children,
@@ -17,9 +18,11 @@ export default function RootLayout({
       <body className={`${fonts.rubik.variable} antialiased`}>
         <ChakraUIProvider>
           <ReactQueryProvider>
-            <Header />
-            {children}
-            <Footer />
+            <Suspense fallback={null}>
+              <Header />
+              {children}
+              <Footer />
+            </Suspense>
           </ReactQueryProvider>
         </ChakraUIProvider>
       </body>
