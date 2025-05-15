@@ -13,4 +13,4 @@ export default {
   argTypes: {},
 };
 
-export const Default = () => <Category />;
+export const Default = () => <Category item={null}/>;

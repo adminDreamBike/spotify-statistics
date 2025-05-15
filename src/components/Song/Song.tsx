@@ -6,17 +6,9 @@ import { useRecommendationsTrack } from "@/lib/queries/song";
 import { Album } from "@/api/types";
 
 export const Song = () => {
-  const { tracks = [], isError, isLoading } = useRecommendationsTrack();
+  const { tracks = [], isLoading } = useRecommendationsTrack();
   const getInfoFromTracks = (): Array<Album> => {
-    let result = [];
-    result = tracks?.map((track) => {
-      return [
-        {
-          ...track.album,
-        },
-      ];
-    });
-    return result;
+    return tracks?.map((track: any) => track.album) || [];
   };
   return (
     <Flex flexDirection="column" flexWrap="wrap">
@@ -28,7 +20,7 @@ export const Song = () => {
           ?.slice(0, 6)
           .map((item) => {
             return (
-              <SpotifyCard key={item.id} item={item[0]} isLoading={isLoading} />
+              <SpotifyCard key={item.id} item={item} isLoading={isLoading} />
             );
           })}
       </Flex>

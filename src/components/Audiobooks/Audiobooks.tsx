@@ -14,7 +14,7 @@ export const Audiobooks = () => {
         New Releases
       </Text>
       <Flex gap="12px" flexWrap="wrap">
-        {items.slice(0, 6).map((item) => {
+        {items.slice(0, 6).map((item: any) => {
           return (
             <SpotifyCard key={item.id} item={item} isLoading={isLoading} />
           );

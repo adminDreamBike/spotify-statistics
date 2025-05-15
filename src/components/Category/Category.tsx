@@ -1,7 +1,7 @@
 import { Card, CardBody, Heading, Image } from "@chakra-ui/react";
 import { getRandomColor } from "../../lib/utils";
 
-export const Category = ({ item }) => {
+export const Category = ({ item }: { item: any }) => {
   const { name, icons } = item;
   const handleClickCategory = () => {
     console.log("item", item);

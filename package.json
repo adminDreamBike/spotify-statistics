@@ -50,6 +50,7 @@
     "@storybook/react": "^8.3.4",
     "@storybook/test": "^8.3.4",
     "@types/node": "^20",
+    "@types/qs": "^6.9.18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vitest/coverage-istanbul": "^2.1.2",

@@ -5,7 +5,7 @@ import { SpotifyCard } from "../SpotifyCard/SpotifyCard";
 import { Flex, Text } from "@chakra-ui/react";
 
 export const Album = () => {
-  const { newReleases = {}, isError, isLoading } = useAlbum();
+  const { newReleases = {}, isLoading } = useAlbum();
   const { albums = {} } = newReleases;
   const { items = [] } = albums;
   return (
@@ -14,7 +14,7 @@ export const Album = () => {
         New Releases
       </Text>
       <Flex gap="12px" flexWrap="wrap">
-        {items.slice(0, 6).map((item) => {
+        {items.slice(0, 6).map((item: any) => {
           return (
             <SpotifyCard key={item.id} item={item} isLoading={isLoading} />
           );

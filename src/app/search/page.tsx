@@ -9,7 +9,7 @@ import { SearchType } from "@/api/types";
 import { SpotifyCard } from "../../components/SpotifyCard/SpotifyCard";
 import { useEffect } from "react";
 
-const SearchItem = ({ q }) => {
+const SearchItem = ({ q }: { q: any }) => {
   const { search = {}, refetch } = useSearch({
     q: q,
     type: SearchType.Artist,
@@ -22,7 +22,7 @@ const SearchItem = ({ q }) => {
   const { items } = search;
   return (
     <Flex flexWrap="wrap" gap="100px">
-      {items?.map((item) => {
+      {items?.map((item: any) => {
         return <SpotifyCard key={item.id} item={item} rounded={true} />;
       })}
     </Flex>
@@ -60,7 +60,7 @@ export default function Page() {
                 Browse All
               </Heading>
               <Flex flexWrap="wrap" gap="20px">
-                {items?.map((item) => {
+                {items?.map((item: any) => {
                   return <Category key={item.id} item={item} />;
                 })}
               </Flex>
